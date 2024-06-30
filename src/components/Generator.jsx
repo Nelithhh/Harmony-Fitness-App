@@ -1,11 +1,11 @@
 import React from 'react'
 
-function Hero() {
+function Generator() {
   return (
     <div>
-      Hero
+      Generator
     </div>
   )
 }
 
-export default Hero
+export default Generator

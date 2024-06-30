@@ -1,11 +1,11 @@
 import React from 'react'
 
-function Hero() {
+function Workout() {
   return (
     <div>
-      Hero
+      Workout
     </div>
   )
 }
 
-export default Hero
+export default Workout
