@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import SectionWrapper from './SectionWrapper'
 import { SCHEMES, WORKOUTS } from '../utils/swoldier'
+import Button from './Button'
 
 function Header(props) {
   const {index, title, description} = props
@@ -58,8 +59,9 @@ function Generator() {
         {Object.keys(WORKOUTS).map((type, typeIndex) => {
           return(
             <button onClick={() => {
+              setMuscles([])
               setPoison(type)
-            }} className={'py-3 duration-200 border rounded-lg bg-slate-950 ' + (type === poison ? 'border-blue-600' : 'border-blue-400')} key={typeIndex}>
+            }} className={'py-3 px-4 duration-200 border rounded-lg bg-slate-950 ' + (type === poison ? 'border-blue-600' : 'border-blue-400')} key={typeIndex}>
               <p className='capitalize'>{type.replaceAll('_', " ")}</p>
             </button>
           )
@@ -69,7 +71,7 @@ function Generator() {
       <Header index={'02'} title={'Locked on targets'} description={"Select the muscles judged for annihlation."} />
       <div className='flex flex-col border border-blue-400 border-solid rounded-lg bg-slate-950'>
         <button onClick={toggleModal} className='relative flex items-center justify-center p-3'>
-          <p>Select muscle group</p>
+          <p className='capitalize'>{muscles.length == 0 ? 'Select muscle group' : muscles.join(' ')}</p>
           <i className="absolute -translate-y-1/2 fa-solid right-3 top-1/2 fa-caret-down"></i>
         </button>
         {showModal && (
@@ -93,13 +95,15 @@ function Generator() {
           return(
             <button onClick={() => {
               setGoal(scheme)
-            }} className={'py-3 duration-200 border rounded-lg bg-slate-950 ' + (scheme === goal ? 'border-blue-600' : 'border-blue-400')} key={schemeIndex}>
+            }} className={'py-3 duration-200 border px-4 rounded-lg bg-slate-950 ' + (scheme === goal ? 'border-blue-600' : 'border-blue-400')} key={schemeIndex}>
               <p className='capitalize'>{scheme.replaceAll('_', " ")}</p>
             </button>
           )
         })}
       </div>
+      <Button text={"Formulate"}></Button>
     </SectionWrapper>
+    
   )
 }
 
