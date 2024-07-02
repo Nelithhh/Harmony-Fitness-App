@@ -40,10 +40,14 @@ function Generator() {
 
     if (poison !== 'individual') {
       setMuscles([muscleGroup])
+      setShowModal(false)
       return
     }
 
     setMuscles([...muscles, muscleGroup])
+    if(muscles.length === 3) {
+      setShowModal(false)
+    }
 
   }
 
