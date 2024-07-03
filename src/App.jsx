@@ -22,7 +22,7 @@ function App() {
   }
 
   return (
-    <main className='flex flex-col min-h-screen text-sm text-white bg-gradient-to-r from-slate-800 to-slate-950 sm:text-base'>
+    <main className='flex flex-col min-h-screen text-sm text-white bg-gradient-to-r from-slate-800 to-slate-900 sm:text-base'>
       <Hero />
       <Generator
         poison={poison}
